@@ -1,0 +1,322 @@
+/* Original hero composition; only the eyebrow and its dot have been removed. */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("assets/fonts/space-grotesk-medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+.hero {
+  margin-top: -89px;
+  color: #f5f7fb;
+  font-size: 15px;
+  line-height: 1.75;
+  position: relative;
+  isolation: isolate;
+  min-height: 765px;
+  overflow: hidden;
+  background: #060a11;
+}
+.hero-art {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-image: url("assets/hero-blackice.webp");
+  background-size: cover;
+  background-position: center 46%;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      #060a11f2 0%,
+      #060a11a6 31%,
+      #060a112b 59%,
+      #060a1100 100%
+    ),
+    linear-gradient(0deg, #080c12 0%, transparent 21%);
+}
+.hero-inner {
+  display: block;
+  position: relative;
+  padding-top: 175px;
+  padding-bottom: 130px;
+  min-height: 765px;
+}
+.hero-copy {
+  position: relative;
+  max-width: 660px;
+}
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  max-width: none;
+  text-wrap: wrap;
+  font-size: clamp(53px, 5.3vw, 78px);
+  line-height: 1.06;
+  letter-spacing: -3.8px;
+}
+.hero h1 > span {
+  color: #73b5ff;
+}
+.hero-description {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #b1bac9;
+  margin-top: 27px;
+}
+.hero-actions {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 34px;
+}
+.hero-actions .text-link {
+  font-size: 11px;
+}
+.hero-caption {
+  position: absolute;
+  right: 5%;
+  bottom: 160px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #d0e4fa;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.9;
+}
+.hero-caption span:not(.caption-cross) {
+  display: block;
+  font-size: 7px;
+  color: #6e8ca9;
+  letter-spacing: 1.2px;
+}
+.caption-cross {
+  color: #74b4ef;
+  font-size: 21px;
+  line-height: 20px;
+}
+.scroll-cue {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #a4aebb;
+}
+.scroll-cue .icon {
+  width: 13px;
+  height: 13px;
+}
+.hero-index {
+  position: absolute;
+  bottom: 38px;
+  right: 0;
+  color: #748294;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.hero .icon {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  filter: invert(1);
+  object-fit: contain;
+}
+.hero-actions .button {
+  gap: 28px;
+  min-height: 52px;
+  padding: 14px 23px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #1166d6;
+  color: white;
+  box-shadow: 0 4px 30px #007bff0d;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.hero-actions .button:hover {
+  background: #1469d7;
+  transform: translateY(-2px);
+}
+.hero-actions .text-link {
+  color: inherit;
+  font-weight: 700;
+  min-height: 0;
+  gap: 16px;
+  justify-content: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-actions .text-link:hover {
+  color: #7fbdff;
+}
+.hero-actions .icon {
+  transition: transform 0.25s;
+}
+.hero-actions a:hover .icon {
+  transform: translate(3px, -3px);
+}
+.hero .scroll-cue .icon {
+  width: 13px;
+  height: 13px;
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 820px;
+  }
+  .hero-inner {
+    min-height: 820px;
+    padding-top: 195px;
+  }
+  .hero-art {
+    background-position: center 48%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .hero h1 {
+    font-size: 66px;
+  }
+  .hero-caption {
+    right: 0;
+    bottom: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .hero-inner {
+    min-height: 710px;
+  }
+  .hero-inner {
+    padding-top: 148px;
+    padding-bottom: 110px;
+  }
+  .hero h1 {
+    font-size: 62px;
+  }
+  .hero-art {
+    background-position: 57% 50%;
+    opacity: 0.8;
+  }
+  .hero::after {
+    background:
+      linear-gradient(90deg, #060a11ed 0%, #060a11b3 40%, #060a1120 100%),
+      linear-gradient(0deg, #080c12, transparent 25%);
+  }
+  .hero-caption {
+    display: none;
+  }
+  .hero-description {
+    font-size: 13px;
+  }
+  .hero-actions {
+    gap: 22px;
+  }
+  .hero-actions .button {
+    font-size: 11px;
+    padding-inline: 17px;
+    gap: 15px;
+  }
+  .hero {
+    margin-top: -77px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .hero-inner {
+    min-height: 790px;
+  }
+  .hero-inner {
+    padding-top: 134px;
+    padding-bottom: 250px;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 9.8vw, 60px);
+    letter-spacing: -2.5px;
+    line-height: 1.08;
+  }
+  .hero-description {
+    font-size: 12px;
+    margin-top: 23px;
+    max-width: 330px;
+    line-height: 1.9;
+  }
+  .hero-art {
+    background-size: auto 78%;
+    background-position: 63% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+  }
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      #060a11 0%,
+      #060a11f5 32%,
+      #060a1199 49%,
+      #060a1100 76%,
+      #080c12 100%
+    );
+  }
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 27px;
+  }
+  .hero-actions .button {
+    font-size: 11px;
+    min-height: 49px;
+    padding-inline: 18px;
+    gap: 20px;
+  }
+  .hero-actions .text-link {
+    font-size: 10px;
+    gap: 12px;
+  }
+  .hero-actions .text-link > .icon {
+    width: 17px;
+    height: 17px;
+  }
+  .scroll-cue {
+    bottom: 26px;
+    font-size: 7px;
+    gap: 10px;
+  }
+  .hero-index {
+    bottom: 29px;
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .desktop-break {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    margin-top: -73px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero * {
+    transition: none !important;
+  }
+}
